@@ -53,7 +53,7 @@
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
 			</tr>
-			<c:forEach var="st" items="${societeTransport}">
+			<c:forEach var="st" items="${societeTransports}">
 				<tr>
 					<td>${st.idSociete}</td>
 					<td>${st.nomSociete}</td>

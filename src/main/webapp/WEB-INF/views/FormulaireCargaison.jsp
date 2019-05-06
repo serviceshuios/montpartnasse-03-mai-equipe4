@@ -7,37 +7,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/main.css">
+<link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/style.css">
-<title>Formulaire adresse</title>
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/bootstrap.css">
+<title>Formulaire Cargaison</title>
 </head>
 <body>
-	<h2>CRUD ADRESSES</h2>
+	<h2>Formulaire Cargaison</h2>
 	<div>
-		<f:form modelAttribute="adresse" method="POST" action="saveAdresse">
+		<f:form modelAttribute="cargaison" method="POST" action="saveCargaison">
 			<table>
 				<tr>
-					<td><f:hidden path="idadresse"/> </td>
+					<td><f:hidden path="idCargaison"/> </td>
 				</tr>
 				<tr>
-					<td>NUM RUE:</td>
-					<td><f:input path="numRue" /></td>
-					<td><f:errors path="numRue" cssClass="error"/></td>
+					<td>NOM CARGAISON:</td>
+					<td><f:input path="nomCargaison" /></td>
+					<td><f:errors path="nomCargaison" cssClass="error"/></td>
 				</tr>
 				<tr>
-					<td>NOM RUE:</td>
-					<td><f:input path="nomRue" /></td>
-					<td><f:errors path="nomRue" cssClass="error"/></td>
+					<td>DEPART:</td>
+					<td><f:input path="depart" /></td>
+					<td><f:errors path="depart" cssClass="error"/></td>
 				</tr>
 				<tr>
-					<td>CODE POSTAL:</td>
-					<td><f:input path="cp" /></td>
-					<td><f:errors path="cp" cssClass="error"/></td>
-				</tr>
-				<tr>
-					<td>VILLE:</td>
-					<td><f:input path="ville" /></td>
-					<td><f:errors path="ville" cssClass="error"/></td>
-				</tr>
+					<td>DESTINATION:</td>
+					<td><f:input path="destination" /></td>
+					<td><f:errors path="destination" cssClass="error"/></td>
+				</tr>				
 				<tr>
 					<td><input type="submit" value="enregistrer" /></td>
 				</tr>
@@ -48,22 +47,20 @@
 		<table class="table1">
 			<tr>
 				<th>ID</th>
-				<th>NUM RUE</th>
-				<th>NOM RUE</th>
-				<th>CP</th>
-				<th>VILLE</th>
+				<th>NOM CARGAISON</th>
+				<th>DEPART</th>
+				<th>DESTINATION</th>
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
 			</tr>
-			<c:forEach var="a" items="${adresses}">
+			<c:forEach var="c" items="${cargaisons}">
 				<tr>
-					<td>${a.idadresse}</td>
-					<td>${a.numRue}</td>
-					<td>${a.nomRue}</td>
-					<td>${a.cp}</td>
-					<td>${a.ville}</td>
-					<td><a href="deleteAdresse?idadresse=${a.idadresse}">supprimer</a></td>
-					<td><a href="editAdresse?idadresse=${a.idadresse}">editer</a></td>
+					<td>${c.idCargaison}</td>
+					<td>${c.nomCargaison}</td>
+					<td>${c.depart}</td>
+					<td>${c.destination}</td>
+					<td><a href="deleteCargaison?idCargaison=${c.idCargaison}">supprimer</a></td>
+					<td><a href="editCargaison?idCargaison=${c.idCargaison}">editer</a></td>
 				</tr>
 			</c:forEach>
 		</table>
