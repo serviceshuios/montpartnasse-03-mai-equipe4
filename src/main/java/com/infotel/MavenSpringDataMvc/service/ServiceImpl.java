@@ -101,9 +101,9 @@ public class ServiceImpl implements Iservice {
 	}
 
 	@Override
-	public Optional<Cargaison> getCargaison(int idCargaison) {
+	public Cargaison getCargaison(int idCargaison) {
 		// TODO Auto-generated method stub
-		return cargaisonRepository.findById(idCargaison);
+		return cargaisonRepository.findById(idCargaison).get();
 	}
 
 	@Override
