@@ -31,7 +31,7 @@ public class AerienneController {
 	    public String save(Aerienne cargaison,  Model model) {
 	        if (cargaison.getIdCargaison() == 0) {
 	           
-	        	service.ajouterCargaison(cargaison);
+	        	service.ajouterAerienne(cargaison);
 	            model.addAttribute("cargaison", new Aerienne());
 	            model.addAttribute("cargaison", service.listerCargaison());
 	            return "cargaisons";

@@ -31,7 +31,7 @@ public class RoutiereController {
 	    public String save(Routiere cargaison,  Model model) {
 	        if (cargaison.getIdCargaison() == 0) {
 	           
-	        	service.ajouterCargaison(cargaison);
+	        	service.ajouterRoutiere(cargaison);
 	            model.addAttribute("cargaison", new Routiere());
 	            model.addAttribute("cargaison", service.listerCargaison());
 	            return "cargaisons";
