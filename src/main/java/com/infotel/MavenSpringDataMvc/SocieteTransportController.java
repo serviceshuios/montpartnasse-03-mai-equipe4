@@ -21,7 +21,7 @@ public class SocieteTransportController {
 	
 	
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@RequestMapping(value = "/indexSocieteTransport", method = RequestMethod.GET)
     public String lister(Model model) {
         model.addAttribute("societeTransport", new SocieteTransport());
         model.addAttribute("societeTransports", service.listerSocieteTransport());

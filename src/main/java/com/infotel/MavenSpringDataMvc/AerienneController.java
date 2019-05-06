@@ -24,7 +24,7 @@ public class AerienneController {
     public String lister(Model model) {
         model.addAttribute("cargaison", new Aerienne());
         model.addAttribute("cargaisons", service.listerCargaison());
-        return "cargaisons";
+        return "aeriennes";
     }
 	
 	 @RequestMapping(value = "/saveAerienne")
@@ -34,7 +34,7 @@ public class AerienneController {
 	        	service.ajouterAerienne(cargaison);
 	            model.addAttribute("cargaison", new Aerienne());
 	            model.addAttribute("cargaison", service.listerCargaison());
-	            return "cargaisons";
+	            return "aeriennes";
 	            
 	        } else {
 	        	
@@ -48,7 +48,7 @@ public class AerienneController {
 	        	service.modifierAerienne (nomCargaison, depart, destination,numVol,taxe, idCargaison);
 	            model.addAttribute("cargaison", new Aerienne());
 	            model.addAttribute("cargaisons", service.listerCargaison());
-	            return "cargaisons";
+	            return "aeriennes";
 	        }
 	   }
 	 
@@ -57,13 +57,13 @@ public class AerienneController {
          service.supprimerCargaison(idCargaison);
          model.addAttribute("cargaison", new Aerienne());
          model.addAttribute("cargaisons", service.listerCargaison());
-         return "cargaison";
+         return "aeriennes";
      }
 	 
 	 @RequestMapping(value = "/editAerienne")
      public String edit(@RequestParam int idCargaison, Model model) {
          model.addAttribute("cargaison", service.getCargaison(idCargaison));
          model.addAttribute("cargaisons", service.listerCargaison());
-         return "cargaisons";
+         return "aeriennes";
      }
 }
