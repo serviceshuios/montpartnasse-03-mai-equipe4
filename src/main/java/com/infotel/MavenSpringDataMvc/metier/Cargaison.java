@@ -28,7 +28,7 @@ public abstract class Cargaison {
 	@GeneratedValue (strategy= GenerationType.IDENTITY)
 
 	private int idCargaison;
-	protected String comCargaison;
+	protected String nomCargaison;
 	protected String depart;
 	protected String destination;
 	
@@ -44,11 +44,11 @@ public void setIdCargaison(int idCargaison) {
 }
 
 public String getComCargaison() {
-	return comCargaison;
+	return nomCargaison;
 }
 
 public void setComCargaison(String comCargaison) {
-	this.comCargaison = comCargaison;
+	this.nomCargaison = comCargaison;
 }
 
 public String getDepart() {
@@ -77,7 +77,7 @@ public void setSocietetransport(SocieteTransport societetransport) {
 
 @Override
 public String toString() {
-	return "Cargaison [idCargaison=" + idCargaison + ", comCargaison=" + comCargaison + ", depart=" + depart
+	return "Cargaison [idCargaison=" + idCargaison + ", nomCargaison=" + nomCargaison + ", depart=" + depart
 			+ ", destination=" + destination + ", societetransport=" + societetransport + "]";
 }
 
