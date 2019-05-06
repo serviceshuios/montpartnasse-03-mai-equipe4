@@ -65,12 +65,14 @@
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
 			</tr>
-			<c:forEach var="a" items="${cargaisons}">
+			<c:forEach var="a" items="${aeriennes}">
 				<tr>
 					<td>${a.idCargaison}</td>
 					<td>${a.nomCargaison}</td>
 					<td>${a.depart}</td>
 					<td>${a.destination}</td>
+					<td>${a.numVol}</td>
+					<td>${a.taxe}</td>
 					<td><a href="deleteAerienne?idCargaison=${a.idCargaison}">supprimer</a></td>
 					<td><a href="editAerienne?idCargaison=${a.idCargaison}">editer</a></td>
 				</tr>

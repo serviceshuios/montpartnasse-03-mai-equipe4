@@ -65,12 +65,14 @@
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
 			</tr>
-			<c:forEach var="r" items="${cargaisons}">
+			<c:forEach var="r" items="${routieres}">
 				<tr>
 					<td>${r.idCargaison}</td>
 					<td>${r.nomCargaison}</td>
 					<td>${r.depart}</td>
 					<td>${r.destination}</td>
+					<td>${r.immatriculation}</td>
+					<td>${r.peage}</td>
 					<td><a href="deleteRoutiere?idCargaison=${r.idCargaison}">supprimer</a></td>
 					<td><a href="editRoutiere?idCargaison=${r.idCargaison}">editer</a></td>
 				</tr>
