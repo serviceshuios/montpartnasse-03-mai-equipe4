@@ -32,7 +32,7 @@ public class SocieteTransportController {
 	    public String save(SocieteTransport societeTransport,  Model model) {
 	        if (societeTransport.getIdSociete() == 0) {
 	           
-	        	service.ajouterSocieteTransport(st);
+	        	service.ajouterSocieteTransport(societeTransport);
 	            model.addAttribute("societeTransport", new SocieteTransport());
 	            model.addAttribute("societeTransports", service.listerSocieteTransport());
 	            return "societeTransports";

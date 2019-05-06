@@ -28,7 +28,7 @@ public class AerienneController {
     }
 	
 	 @RequestMapping(value = "/saveAerienne")
-	    public String save(Cargaison cargaison,  Model model) {
+	    public String save(Aerienne cargaison,  Model model) {
 	        if (cargaison.getIdCargaison() == 0) {
 	           
 	        	service.ajouterCargaison(cargaison);
