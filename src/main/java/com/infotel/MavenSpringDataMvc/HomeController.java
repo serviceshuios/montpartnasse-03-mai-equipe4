@@ -35,5 +35,11 @@ public class HomeController {
 		
 		return "home";
 	}
-	
+	@RequestMapping(value ="/bonjour", method = RequestMethod.GET)
+	public String bonjour (Model model) {
+		String message="BONJOUR SPRING DATA MVC";
+		model.addAttribute("message", message);
+		
+		return "bonjour";
+	}
 }
