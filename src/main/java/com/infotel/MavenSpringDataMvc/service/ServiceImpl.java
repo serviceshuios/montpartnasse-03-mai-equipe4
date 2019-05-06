@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 import com.infotel.MavenSpringDataMvc.dao.CargaisonRepository;
 import com.infotel.MavenSpringDataMvc.dao.SocieteTransportRepository;
+import com.infotel.MavenSpringDataMvc.metier.Aerienne;
 import com.infotel.MavenSpringDataMvc.metier.Cargaison;
+import com.infotel.MavenSpringDataMvc.metier.Routiere;
 import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 
 @Service("service")
@@ -82,9 +84,15 @@ public class ServiceImpl implements Iservice {
 	// Méthode CRUD Cargaison
 	
 	@Override
-	public Cargaison ajouterCargaison(Cargaison c) {
+	public Cargaison ajouterRoutiere(Routiere r) {
 		// TODO Auto-generated method stub
-		return cargaisonRepository.save(c);
+		return cargaisonRepository.save(r);
+	}
+	
+	@Override
+	public Cargaison ajouterAerienne(Aerienne a) {
+		// TODO Auto-generated method stub
+		return cargaisonRepository.save(a);
 	}
 
 	@Override

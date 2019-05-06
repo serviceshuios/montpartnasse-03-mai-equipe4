@@ -3,7 +3,9 @@ package com.infotel.MavenSpringDataMvc.service;
 import java.util.Date;
 import java.util.Optional;
 
+import com.infotel.MavenSpringDataMvc.metier.Aerienne;
 import com.infotel.MavenSpringDataMvc.metier.Cargaison;
+import com.infotel.MavenSpringDataMvc.metier.Routiere;
 import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 
 public interface Iservice {
@@ -15,7 +17,8 @@ public interface Iservice {
 	public void supprimerSocieteTransport(int idSociete);
 	public Iterable<SocieteTransport> listerSocieteTransport();
 	
-	public Cargaison ajouterCargaison(Cargaison c);
+	public Cargaison ajouterRoutiere(Routiere r);
+	public Cargaison ajouterAerienne(Aerienne a);
 	public Optional<Cargaison> getCargaison(int idCargaison);
 	public Cargaison affichageCargaison(int idCargaison);
 	public int modifierAerienne(String nomCargaison, String depart, String destination,String numVol, double taxe, int idCargaison);
