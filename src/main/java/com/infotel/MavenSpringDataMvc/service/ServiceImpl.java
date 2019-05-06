@@ -100,9 +100,17 @@ public class ServiceImpl implements Iservice {
 	}
 
 	@Override
-	public int modifierCargaison(String nomCargaison, String depart, String destination, int idCargaison) {
+	public int modifierAerienne(String nomCargaison, String depart, String destination, String numVol, double taxe,
+			int idCargaison) {
 		// TODO Auto-generated method stub
-		return cargaisonRepository.modifierCargaison(nomCargaison, depart, destination, idCargaison);
+		return cargaisonRepository.modifierAerienne(nomCargaison, depart, destination, numVol, taxe, idCargaison);
+	}
+
+	@Override
+	public int modifierRoutiere(String nomCargaison, String depart, String destination, String immatriculation,
+			double peage, int idCargaison) {
+		// TODO Auto-generated method stub
+		return cargaisonRepository.modifierRoutiere(nomCargaison, depart, destination, immatriculation, peage, idCargaison);
 	}
 
 	@Override
@@ -125,4 +133,6 @@ public class ServiceImpl implements Iservice {
 		// TODO Auto-generated method stub
 		cargaisonRepository.lierCargaisonSocieteTransport(cargaison, idSociete);
 	}
+
+	
 }
