@@ -21,7 +21,7 @@ public interface Iservice {
 	 * Liste des méthodes CRUD utilisées pour la classe SocieteTransport
 	 */
 	public SocieteTransport ajouterSocieteTransport(SocieteTransport st);
-	public Optional<SocieteTransport> getSocieteTransport(int idSociete);
+	public SocieteTransport getSocieteTransport(int idSociete);
 	public SocieteTransport affichageSocieteTransport(int idSociete);
 	public int modifierSocieteTransport(String nomSociete, String numSiret, Date dateCreation, int idSociete);
 	public void supprimerSocieteTransport(int idSociete);

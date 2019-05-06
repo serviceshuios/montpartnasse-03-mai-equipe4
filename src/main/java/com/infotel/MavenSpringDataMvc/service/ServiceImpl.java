@@ -56,9 +56,9 @@ public class ServiceImpl implements Iservice {
 	}
 
 	@Override
-	public Optional<SocieteTransport> getSocieteTransport(int idSociete) {
+	public SocieteTransport getSocieteTransport(int idSociete) {
 		// TODO Auto-generated method stub
-		return societeTransportRepository.findById(idSociete);
+		return societeTransportRepository.findById(idSociete).get();
 	}
 
 	@Override
