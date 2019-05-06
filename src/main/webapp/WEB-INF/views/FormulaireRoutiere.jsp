@@ -12,12 +12,12 @@
 	href="<%=request.getContextPath()%>/resources/css/style.css">
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/bootstrap.css">
-<title>Formulaire Cargaison</title>
+<title>Formulaire Cargaison Routiere</title>
 </head>
 <body>
-	<h2>Formulaire Cargaison</h2>
+	<h2>Formulaire Cargaison Routiere</h2>
 	<div>
-		<f:form modelAttribute="cargaison" method="POST" action="saveCargaison">
+		<f:form modelAttribute="cargaison" method="POST" action="saveRoutiere">
 			<table>
 				<tr>
 					<td><f:hidden path="idCargaison"/> </td>
@@ -36,7 +36,17 @@
 					<td>DESTINATION:</td>
 					<td><f:input path="destination" /></td>
 					<td><f:errors path="destination" cssClass="error"/></td>
-				</tr>				
+				</tr>	
+				<tr>
+					<td>IMMATRICULATION:</td>
+					<td><f:input path="immatriculation" /></td>
+					<td><f:errors path="immatriculation" cssClass="error"/></td>
+				</tr>		
+				<tr>
+					<td>PEAGE:</td>
+					<td><f:input path="peage" /></td>
+					<td><f:errors path="peage" cssClass="error"/></td>
+				</tr>					
 				<tr>
 					<td><input type="submit" value="enregistrer" /></td>
 				</tr>
@@ -50,17 +60,19 @@
 				<th>NOM CARGAISON</th>
 				<th>DEPART</th>
 				<th>DESTINATION</th>
+				<th>IMMATRICULATION</th>
+				<th>PEAGE</th>
 				<th>SUPPRIMER</th>
 				<th>MODIFIER</th>
 			</tr>
-			<c:forEach var="c" items="${cargaisons}">
+			<c:forEach var="r" items="${cargaisons}">
 				<tr>
-					<td>${c.idCargaison}</td>
-					<td>${c.nomCargaison}</td>
-					<td>${c.depart}</td>
-					<td>${c.destination}</td>
-					<td><a href="deleteCargaison?idCargaison=${c.idCargaison}">supprimer</a></td>
-					<td><a href="editCargaison?idCargaison=${c.idCargaison}">editer</a></td>
+					<td>${r.idCargaison}</td>
+					<td>${r.nomCargaison}</td>
+					<td>${r.depart}</td>
+					<td>${r.destination}</td>
+					<td><a href="deleteRoutiere?idCargaison=${r.idCargaison}">supprimer</a></td>
+					<td><a href="editRoutiere?idCargaison=${r.idCargaison}">editer</a></td>
 				</tr>
 			</c:forEach>
 		</table>
