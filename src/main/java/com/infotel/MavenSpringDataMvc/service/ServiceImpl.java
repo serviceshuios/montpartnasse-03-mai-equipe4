@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.infotel.MavenSpringDataMvc.dao.CargaisonRepository;
+import com.infotel.MavenSpringDataMvc.dao.SocieteTransportRepository;
 import com.infotel.MavenSpringDataMvc.metier.Cargaison;
 import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 
@@ -61,13 +63,13 @@ public class ServiceImpl implements Iservice {
 	@Override
 	public int modifierSocieteTransport(String nomSociete, String numSiret, Date dateCreation, int idSociete) {
 		// TODO Auto-generated method stub
-		return societeTransportRepository.modiferSocieteTransport(nomSociete, numSiret, dateCreation, idSociete);
+		return societeTransportRepository.modifierSocieteTransport(nomSociete, numSiret, dateCreation, idSociete);
 	}
 
 	@Override
 	public void supprimerSocieteTransport(int idSociete) {
 		// TODO Auto-generated method stub
-		societeTransportRepository.deleteById();
+		societeTransportRepository.deleteById(idSociete);
 	}
 
 	@Override
