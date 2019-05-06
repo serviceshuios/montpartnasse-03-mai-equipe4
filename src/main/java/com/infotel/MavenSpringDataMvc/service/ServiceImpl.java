@@ -168,5 +168,17 @@ public class ServiceImpl implements Iservice {
 		return routiereRepository.findAll();
 	}
 
+	@Override
+	public void lierRoutiereSociete(Routiere routiere, int idSociete) {
+		// TODO Auto-generated method stub
+		routiereRepository.lierRoutiereSociete(routiere, idSociete);
+	}
+
+	@Override
+	public void lierAerienneSociete(Aerienne aerienne, int idSociete) {
+		// TODO Auto-generated method stub
+		aerienneRepository.lierAerienneSociete(aerienne, idSociete);
+	}
+
 	
 }

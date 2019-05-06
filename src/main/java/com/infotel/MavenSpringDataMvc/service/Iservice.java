@@ -41,4 +41,12 @@ public interface Iservice {
 	public Iterable<Aerienne> listerAerienne();
 	public Iterable<Routiere> listerRoutiere();
 	
+	/**
+	 * 
+	 * Liste des méthodes utilisées pour lier un element de la classe Cargaison avec un elements de la classe Societe
+	 */
+	
+	public void lierRoutiereSociete(Routiere routiere, int idSociete);
+	public void lierAerienneSociete(Aerienne aerienne, int idSociete);
+	
 }

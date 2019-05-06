@@ -62,14 +62,19 @@
 		</f:form>
 	</div>
 
-	<tr>
-		<td>Societe de transport:</td>
-		<td><f:select path="societeTransports">
-				<f:option value="" label="-----" />
-				<f:options value="" items="${societeTransports}" />
-			</f:select></td>
-		<td><f:errors path="societeTransports" /></td>
-	</tr>
+	Societe de transport : <br/>
+	<select name="idSociete">
+		<optgroup>
+			<option value="0">....</option>
+			<c:if test="${! empty societeTransports}">
+				<c:forEach items="${societeTransports}" var="st">
+					<option value="${st.idSociete}">
+						<c:out value="${st.nomSociete}, ${st.numSiret}, ${st.dateCreation}">
+						</c:out></option>
+				</c:forEach>
+			</c:if>
+		</optgroup>
+	</select>
 
 	<div id="listProduits">
 		<table class="table1">
