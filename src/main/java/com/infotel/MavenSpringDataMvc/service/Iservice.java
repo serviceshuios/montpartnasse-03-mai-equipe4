@@ -40,6 +40,7 @@ public interface Iservice {
 	public void supprimerCargaison(int idCargaison);
 	public Iterable<Cargaison> listerCargaison();
 	
+	
 	/**
 	 * 
 	 * Méthode utilisée pour lier un élément de la classe Cargaison à un élément de la classe SocieteTransport
