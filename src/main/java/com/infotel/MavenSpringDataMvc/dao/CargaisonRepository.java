@@ -21,8 +21,4 @@ public interface CargaisonRepository extends JpaRepository<Cargaison, Integer> {
 	public int modifierRoutiere(@Param("x")String nomCargaison, @Param("y")String depart, @Param("z")String destination ,
 			@Param("v")String immatriculation, @Param("w")double peage, @Param("c")int idCargaison);
 	
-	@Modifying
-	@Query("UPDATE Cargaison SET societeTransport = :x WHERE idSociete = :y")
-	public void lierCargaisonSocieteTransport(@Param("x")Cargaison cargaison, @Param("y")int idSociete);
-
 }

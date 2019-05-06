@@ -5,6 +5,14 @@
 	<title>Home</title>
 </head>
 <body>
+<div class="bar">
+                <nav class="container">
+                    <a href="http://localhost:8080/MavenSpringDataMvc">Accueil</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexAerienne">Cargaison aerienne</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexRoutiere">Cargaison routiere</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexSocieteTransport">Societe transport</a>
+                </nav>
+            </div>
 <h1>
 	Hello world!  
 </h1>

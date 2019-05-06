@@ -15,6 +15,14 @@
 <title>Formulaire pour les sociétés de transport</title>
 </head>
 <body>
+<div class="bar">
+                <nav class="container">
+                    <a href="http://localhost:8080/MavenSpringDataMvc">Accueil</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexAerienne">Cargaison aerienne</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexRoutiere">Cargaison routiere</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexSocieteTransport">Societe transport</a>
+                </nav>
+            </div>
 	<h2>Formulaire pour les sociétés de transport</h2>
 	<div>
 		<f:form modelAttribute="societeTransport" method="POST" action="saveSocieteTransport">

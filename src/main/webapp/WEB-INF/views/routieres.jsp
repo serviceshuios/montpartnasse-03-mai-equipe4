@@ -15,6 +15,14 @@
 <title>Formulaire Cargaison Routiere</title>
 </head>
 <body>
+<div class="bar">
+                <nav class="container">
+                    <a href="http://localhost:8080/MavenSpringDataMvc">Accueil</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexAerienne">Cargaison aerienne</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexRoutiere">Cargaison routiere</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexSocieteTransport">Societe transport</a>
+                </nav>
+            </div>
 	<h2>Formulaire Cargaison Routiere</h2>
 	<div>
 		<f:form modelAttribute="routiere" method="POST" action="saveRoutiere">
@@ -53,6 +61,19 @@
 			</table>
 		</f:form>
 	</div>
+	Societe de transport : <br/>
+	<select name="idSociete">
+		<optgroup>
+			<option value="0">....</option>
+			<c:if test="${! empty societeTransports}">
+				<c:forEach items="${societeTransports}" var="st">
+					<option value="${st.idSociete}">
+						<c:out value="${st.nomSociete}, ${st.numSiret}, ${st.dateCreation}">
+						</c:out></option>
+				</c:forEach>
+			</c:if>
+		</optgroup>
+	</select>
 	<div id="listProduits">
 		<table class="table1">
 			<tr>

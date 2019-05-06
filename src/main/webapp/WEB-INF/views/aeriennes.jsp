@@ -15,6 +15,14 @@
 <title>Formulaire Cargaison Aerienne</title>
 </head>
 <body>
+<div class="bar">
+                <nav class="container">
+                    <a href="http://localhost:8080/MavenSpringDataMvc">Accueil</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexAerienne">Cargaison aerienne</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexRoutiere">Cargaison routiere</a>
+                    <a href="http://localhost:8080/MavenSpringDataMvc/indexSocieteTransport">Societe transport</a>
+                </nav>
+            </div>
 	<h2>Formulaire Cargaison Aerienne</h2>
 	<div>
 		<f:form modelAttribute="aerienne" method="POST" action="saveAerienne">
@@ -53,6 +61,16 @@
 			</table>
 		</f:form>
 	</div>
+
+	<tr>
+		<td>Societe de transport:</td>
+		<td><f:select path="societeTransports">
+				<f:option value="" label="-----" />
+				<f:options value="" items="${societeTransports}" />
+			</f:select></td>
+		<td><f:errors path="societeTransports" /></td>
+	</tr>
+
 	<div id="listProduits">
 		<table class="table1">
 			<tr>

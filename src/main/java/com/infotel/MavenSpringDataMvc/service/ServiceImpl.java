@@ -156,14 +156,6 @@ public class ServiceImpl implements Iservice {
 	}
 
 	
-	// Méthode pour lier la ForeignKey
-	
-	@Override
-	public void lierCargaisonSocieteTransport(Cargaison cargaison, int idSociete) {
-		// TODO Auto-generated method stub
-		cargaisonRepository.lierCargaisonSocieteTransport(cargaison, idSociete);
-	}
-
 	@Override
 	public Iterable<Aerienne> listerAerienne() {
 		// TODO Auto-generated method stub
