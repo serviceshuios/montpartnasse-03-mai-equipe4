@@ -43,12 +43,12 @@ public void setIdCargaison(int idCargaison) {
 	this.idCargaison = idCargaison;
 }
 
-public String getComCargaison() {
+public String getNomCargaison() {
 	return nomCargaison;
 }
 
-public void setComCargaison(String comCargaison) {
-	this.nomCargaison = comCargaison;
+public void setNomCargaison(String NomCargaison) {
+	this.nomCargaison = NomCargaison;
 }
 
 public String getDepart() {
