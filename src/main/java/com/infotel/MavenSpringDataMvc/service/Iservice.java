@@ -8,8 +8,18 @@ import com.infotel.MavenSpringDataMvc.metier.Cargaison;
 import com.infotel.MavenSpringDataMvc.metier.Routiere;
 import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 
+/**
+ * Interface regroupant les différentes méthodes invoquées
+ * @author Raphaël
+ *
+ */
+
 public interface Iservice {
 
+	/**
+	 * 
+	 * Liste des méthodes CRUD utilisées pour la classe SocieteTransport
+	 */
 	public SocieteTransport ajouterSocieteTransport(SocieteTransport st);
 	public Optional<SocieteTransport> getSocieteTransport(int idSociete);
 	public SocieteTransport affichageSocieteTransport(int idSociete);
@@ -17,6 +27,10 @@ public interface Iservice {
 	public void supprimerSocieteTransport(int idSociete);
 	public Iterable<SocieteTransport> listerSocieteTransport();
 	
+	/**
+	 * 
+	 * Liste des méthodes CRUD utilisées pour la classe mère Cargaison et ses classes filles
+	 */
 	public Cargaison ajouterRoutiere(Routiere r);
 	public Cargaison ajouterAerienne(Aerienne a);
 	public Optional<Cargaison> getCargaison(int idCargaison);
@@ -26,6 +40,9 @@ public interface Iservice {
 	public void supprimerCargaison(int idCargaison);
 	public Iterable<Cargaison> listerCargaison();
 	
-	
+	/**
+	 * 
+	 * Méthode utilisée pour lier un élément de la classe Cargaison à un élément de la classe SocieteTransport
+	 */
 	public void lierCargaisonSocieteTransport(Cargaison cargaison, int idSociete);
 }
