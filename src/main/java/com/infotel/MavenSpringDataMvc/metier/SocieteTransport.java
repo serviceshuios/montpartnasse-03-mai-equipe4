@@ -12,6 +12,13 @@ import javax.persistence.OneToMany;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+/**
+ * 
+ * @author Johan 
+ * Paramètres de la classe  SocieteTransport
+ *Clé primaire, Getter and Setter, Constructeur toString()
+ *
+ */
 @Component
 @Scope(value = "prototype")
 @Entity

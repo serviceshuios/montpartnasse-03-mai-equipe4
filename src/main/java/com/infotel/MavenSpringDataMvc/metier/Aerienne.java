@@ -9,7 +9,12 @@ import javax.persistence.Id;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-
+/**
+ * @author Johan 
+ * Paramètres de la classe Aerienne
+ *Getter and Setter, l'héritage avec la classe Cargaison, Constructeur toString()
+ *
+ */
 @Entity
 
 @Component

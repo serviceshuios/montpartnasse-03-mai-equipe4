@@ -6,6 +6,13 @@ import javax.persistence.Entity;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+/**
+ * 
+ * 
+ * @author Johan 
+ * Paramètres de la classe  Routière
+ *Getter and Setter, l'héritage avec la classe Cargaison, Constructeur toString()
+ */
 @Component
 @Scope(value = "prototype")
 @Entity

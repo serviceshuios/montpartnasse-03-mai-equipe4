@@ -13,6 +13,13 @@ import javax.persistence.ManyToOne;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+/**
+ * 
+ * @author Johan 
+ * Paramètres de la classe  Cargaison
+ *Getter and Setter,  Constructeur toString()
+ *
+ */
 @Entity
 @Component
 @Scope(value = "prototype")
