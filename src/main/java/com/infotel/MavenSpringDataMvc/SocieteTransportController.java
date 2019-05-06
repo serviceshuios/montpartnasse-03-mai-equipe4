@@ -46,7 +46,7 @@ public class SocieteTransportController {
 	            
 	        	service.modifierSocieteTransport(nomSociete, numSiret, dateCreation, idSociete);
 	            model.addAttribute("societeTransport", new SocieteTransport());
-	            model.addAttribute("societeTransports", service.listerCargaison());
+	            model.addAttribute("societeTransports", service.listerSocieteTransport());
 	            return "societeTransports";
 	        }
 	   }
@@ -61,8 +61,8 @@ public class SocieteTransportController {
 	 
 	 @RequestMapping(value = "/editSocieteTransport")
      public String edit(@RequestParam int idSociete, Model model) {
-         model.addAttribute("SocieteTransport", service.getSocieteTransport(idSociete));
-         model.addAttribute("SocieteTransport", service.listerSocieteTransport());
+         model.addAttribute("societeTransport", service.getSocieteTransport(idSociete));
+         model.addAttribute("societeTransports", service.listerSocieteTransport());
          return "societeTransports";
      }
 }

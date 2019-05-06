@@ -6,8 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.infotel.MavenSpringDataMvc.dao.AerienneRepository;
 import com.infotel.MavenSpringDataMvc.dao.CargaisonRepository;
+import com.infotel.MavenSpringDataMvc.dao.RoutiereRepository;
 import com.infotel.MavenSpringDataMvc.dao.SocieteTransportRepository;
 import com.infotel.MavenSpringDataMvc.metier.Aerienne;
 import com.infotel.MavenSpringDataMvc.metier.Cargaison;
@@ -23,10 +24,32 @@ public class ServiceImpl implements Iservice {
 	@Autowired
 	private CargaisonRepository cargaisonRepository;
 	
+	@Autowired
+	private AerienneRepository aerienneRepository;
+	
+	@Autowired
+	private RoutiereRepository routiereRepository;
+	
 	
 	
 	// Getter and Setter
 	
+	public RoutiereRepository getRoutiereRepository() {
+		return routiereRepository;
+	}
+
+	public void setRoutiereRepository(RoutiereRepository routiereRepository) {
+		this.routiereRepository = routiereRepository;
+	}
+
+	public AerienneRepository getAerienneRepository() {
+		return aerienneRepository;
+	}
+
+	public void setAerienneRepository(AerienneRepository aerienneRepository) {
+		this.aerienneRepository = aerienneRepository;
+	}
+
 	public SocieteTransportRepository getSocieteTransportRepository() {
 		return societeTransportRepository;
 	}
@@ -132,12 +155,6 @@ public class ServiceImpl implements Iservice {
 		cargaisonRepository.deleteById(idCargaison);
 	}
 
-	@Override
-	public Iterable<Cargaison> listerCargaison() {
-		// TODO Auto-generated method stub
-		return cargaisonRepository.findAll();
-	}
-
 	
 	// Méthode pour lier la ForeignKey
 	
@@ -147,7 +164,17 @@ public class ServiceImpl implements Iservice {
 		cargaisonRepository.lierCargaisonSocieteTransport(cargaison, idSociete);
 	}
 
-	
+	@Override
+	public Iterable<Aerienne> listerAerienne() {
+		// TODO Auto-generated method stub
+		return aerienneRepository.findAll();
+	}
+
+	@Override
+	public Iterable<Routiere> listerRoutiere() {
+		// TODO Auto-generated method stub
+		return routiereRepository.findAll();
+	}
 
 	
 }

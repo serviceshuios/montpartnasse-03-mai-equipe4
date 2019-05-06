@@ -38,7 +38,8 @@ public interface Iservice {
 	public int modifierAerienne(String nomCargaison, String depart, String destination,String numVol, double taxe, int idCargaison);
 	public int modifierRoutiere(String nomCargaison, String depart, String destination,String immatriculation, double peage, int idCargaison);
 	public void supprimerCargaison(int idCargaison);
-	public Iterable<Cargaison> listerCargaison();
+	public Iterable<Aerienne> listerAerienne();
+	public Iterable<Routiere> listerRoutiere();
 	
 	
 	/**
