@@ -17,7 +17,7 @@
 <body>
 	<h2>Formulaire Cargaison Aerienne</h2>
 	<div>
-		<f:form modelAttribute="cargaison" method="POST" action="saveAerienne">
+		<f:form modelAttribute="aerienne" method="POST" action="saveAerienne">
 			<table>
 				<tr>
 					<td><f:hidden path="idCargaison"/> </td>

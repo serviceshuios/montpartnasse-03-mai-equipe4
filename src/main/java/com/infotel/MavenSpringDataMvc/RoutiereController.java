@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.infotel.MavenSpringDataMvc.metier.Cargaison;
 import com.infotel.MavenSpringDataMvc.metier.Routiere;
 import com.infotel.MavenSpringDataMvc.service.Iservice;
 
@@ -22,32 +21,32 @@ public class RoutiereController {
 	
 	@RequestMapping(value = "/indexRoutiere", method = RequestMethod.GET)
     public String lister(Model model) {
-        model.addAttribute("cargaison", new Routiere());
-        model.addAttribute("cargaisons", service.listerCargaison());
+        model.addAttribute("routiere", new Routiere());
+        model.addAttribute("routieres", service.listerCargaison());
         return "routieres";
     }
 	
 	 @RequestMapping(value = "/saveRoutiere")
-	    public String save(Routiere cargaison,  Model model) {
-	        if (cargaison.getIdCargaison() == 0) {
+	    public String save(Routiere routiere,  Model model) {
+	        if (routiere.getIdCargaison() == 0) {
 	           
-	        	service.ajouterRoutiere(cargaison);
-	            model.addAttribute("cargaison", new Routiere());
-	            model.addAttribute("cargaison", service.listerCargaison());
+	        	service.ajouterRoutiere(routiere);
+	            model.addAttribute("routiere", new Routiere());
+	            model.addAttribute("routieres", service.listerCargaison());
 	            return "routieres";
 	            
 	        } else {
 	        	
-	        	String nomCargaison = cargaison.getNomCargaison();
-	            String depart = cargaison.getDepart();
-	            String destination = cargaison.getDestination();
-	            int idCargaison= cargaison.getIdCargaison();
-	            String immatriculation = cargaison.getImmatriculation();
-	            double peage= cargaison.getPeage();
+	        	String nomCargaison = routiere.getNomCargaison();
+	            String depart = routiere.getDepart();
+	            String destination = routiere.getDestination();
+	            int idCargaison= routiere.getIdCargaison();
+	            String immatriculation = routiere.getImmatriculation();
+	            double peage= routiere.getPeage();
 	            
 	        	service.modifierRoutiere(nomCargaison, depart, destination, immatriculation, peage, idCargaison);
-	            model.addAttribute("cargaison", new Routiere());
-	            model.addAttribute("cargaisons", service.listerCargaison());
+	            model.addAttribute("routiere", new Routiere());
+	            model.addAttribute("routieres", service.listerCargaison());
 	            return "routieres";
 	        }
 	   }
@@ -55,15 +54,15 @@ public class RoutiereController {
 	 @RequestMapping(value = "/deleteRoutiere")
      public String delete(@RequestParam int idCargaison, Model model) {
          service.supprimerCargaison(idCargaison);
-         model.addAttribute("cargaison", new Routiere());
-         model.addAttribute("cargaisons", service.listerCargaison());
+         model.addAttribute("routiere", new Routiere());
+         model.addAttribute("routieres", service.listerCargaison());
          return "routieres";
      }
 	 
 	 @RequestMapping(value = "/editRoutiere")
      public String edit(@RequestParam int idCargaison, Model model) {
-         model.addAttribute("cargaison", service.getCargaison(idCargaison));
-         model.addAttribute("cargaison", service.listerCargaison());
+         model.addAttribute("routiere", service.getCargaison(idCargaison));
+         model.addAttribute("routieres", service.listerCargaison());
          return "routieres";
      }
 }

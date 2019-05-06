@@ -17,7 +17,7 @@
 <body>
 	<h2>Formulaire Cargaison Routiere</h2>
 	<div>
-		<f:form modelAttribute="cargaison" method="POST" action="saveRoutiere">
+		<f:form modelAttribute="routiere" method="POST" action="saveRoutiere">
 			<table>
 				<tr>
 					<td><f:hidden path="idCargaison"/> </td>
