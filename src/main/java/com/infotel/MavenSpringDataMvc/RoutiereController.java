@@ -23,6 +23,7 @@ public class RoutiereController {
     public String lister(Model model) {
         model.addAttribute("routiere", new Routiere());
         model.addAttribute("routieres", service.listerRoutiere());
+        model.addAttribute("societeTransports", service.listerSocieteTransport());
         return "routieres";
     }
 	
@@ -33,6 +34,7 @@ public class RoutiereController {
 	        	service.ajouterRoutiere(routiere);
 	            model.addAttribute("routiere", new Routiere());
 	            model.addAttribute("routieres", service.listerRoutiere());
+	            model.addAttribute("societeTransports", service.listerSocieteTransport());
 	            return "routieres";
 	            
 	        } else {
@@ -47,6 +49,7 @@ public class RoutiereController {
 	        	service.modifierRoutiere(nomCargaison, depart, destination, immatriculation, peage, idCargaison);
 	            model.addAttribute("routiere", new Routiere());
 	            model.addAttribute("routieres", service.listerRoutiere());
+	            model.addAttribute("societeTransports", service.listerSocieteTransport());
 	            return "routieres";
 	        }
 	   }
@@ -56,6 +59,7 @@ public class RoutiereController {
          service.supprimerCargaison(idCargaison);
          model.addAttribute("routiere", new Routiere());
          model.addAttribute("routieres", service.listerRoutiere());
+         model.addAttribute("societeTransports", service.listerSocieteTransport());
          return "routieres";
      }
 	 
@@ -63,6 +67,7 @@ public class RoutiereController {
      public String edit(@RequestParam int idCargaison, Model model) {
          model.addAttribute("routiere", service.getCargaison(idCargaison));
          model.addAttribute("routieres", service.listerRoutiere());
+         model.addAttribute("societeTransports", service.listerSocieteTransport());
          return "routieres";
      }
 }
