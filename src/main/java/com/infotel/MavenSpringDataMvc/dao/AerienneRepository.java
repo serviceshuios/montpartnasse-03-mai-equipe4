@@ -10,8 +10,8 @@ import com.infotel.MavenSpringDataMvc.metier.Aerienne;
 public interface AerienneRepository extends JpaRepository<Aerienne, Integer>{
 
 	@Modifying
-	@Query("UPDATE Aerienne SET aerienne = :x WHERE idSociete = :y")
-	public void lierAerienneSociete(@Param("x")Aerienne aerienne, @Param("y")int idSociete);
+	@Query("UPDATE Aerienne SET idSociete = :x WHERE idCargaison = :y")
+	public void lierAerienneSociete(@Param("x")int idSociete, @Param("y")int idCargaison);
 
 
 }

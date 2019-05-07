@@ -68,4 +68,20 @@ public class AerienneController {
          model.addAttribute("societeTransports", service.listerSocieteTransport());
          return "aeriennes";
      }
+	 
+	 @RequestMapping(value = "/indexAttribuerAerienne")
+	 public String  listerAttribuer(Model model) {
+		 model.addAttribute("aerienne", new Aerienne());
+	     model.addAttribute("aeriennes", service.listerAerienne());
+	     model.addAttribute("societeTransports", service.listerSocieteTransport());
+	     return "liersocieteaerienne";
+	 }
+	 
+	 @RequestMapping(value = "/attribuerAerienne")
+	 public String attribuerAerienne(@RequestParam int idSociete, @RequestParam int idCargaison, Model model) {
+		 service.lierAerienneSociete(idSociete, idCargaison);
+		 model.addAttribute("aeriennes", service.listerAerienne());
+	       model.addAttribute("societeTransports", service.listerSocieteTransport());
+		 return "liersocieteaerienne";
+	 }
 }

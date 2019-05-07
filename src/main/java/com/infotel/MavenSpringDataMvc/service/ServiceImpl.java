@@ -169,15 +169,15 @@ public class ServiceImpl implements Iservice {
 	}
 
 	@Override
-	public void lierRoutiereSociete(Routiere routiere, int idSociete) {
+	public void lierRoutiereSociete(int idSociete, int idCargaison) {
 		// TODO Auto-generated method stub
-		routiereRepository.lierRoutiereSociete(routiere, idSociete);
+		routiereRepository.lierRoutiereSociete(idSociete, idCargaison);
 	}
 
 	@Override
-	public void lierAerienneSociete(Aerienne aerienne, int idSociete) {
+	public void lierAerienneSociete(int idSociete, int idCargaison) {
 		// TODO Auto-generated method stub
-		aerienneRepository.lierAerienneSociete(aerienne, idSociete);
+		aerienneRepository.lierAerienneSociete(idSociete, idCargaison);
 	}
 
 	

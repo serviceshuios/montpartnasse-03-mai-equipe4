@@ -10,6 +10,6 @@ import com.infotel.MavenSpringDataMvc.metier.Routiere;
 public interface RoutiereRepository extends JpaRepository<Routiere, Integer>{
 
 	@Modifying
-	@Query("UPDATE Routiere SET routiere = :x WHERE idSociete = :y")
-	public void lierRoutiereSociete(@Param("x")Routiere routiere, @Param("y")int idSociete);
+	@Query("UPDATE Routiere SET idSociete = :x WHERE idCargaison = :y")
+	public void lierRoutiereSociete(@Param("x")int idSociete, @Param("y")int idCargaison);
 }

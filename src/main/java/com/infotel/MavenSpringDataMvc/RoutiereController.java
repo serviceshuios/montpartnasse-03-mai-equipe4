@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.infotel.MavenSpringDataMvc.metier.Aerienne;
 import com.infotel.MavenSpringDataMvc.metier.Routiere;
 import com.infotel.MavenSpringDataMvc.service.Iservice;
 
@@ -70,4 +71,20 @@ public class RoutiereController {
          model.addAttribute("societeTransports", service.listerSocieteTransport());
          return "routieres";
      }
+	 
+	 @RequestMapping(value = "/indexAttribuerRoutiere")
+	 public String  listerAttribuer(Model model) {
+		 model.addAttribute("routiere", new Routiere());
+	     model.addAttribute("routieres", service.listerRoutiere());
+	     model.addAttribute("societeTransports", service.listerSocieteTransport());
+	     return "liersocieteroutiere";
+	 }
+	 
+	 @RequestMapping(value = "/attribuerRoutiere")
+	 public String attribuerAerienne(@RequestParam int idSociete, @RequestParam int idCargaison, Model model) {
+		 service.lierRoutiereSociete(idSociete, idCargaison);
+		 model.addAttribute("routieres", service.listerAerienne());
+	     model.addAttribute("societeTransports", service.listerSocieteTransport());
+		 return "liersocieteroutiere";
+	 }
 }

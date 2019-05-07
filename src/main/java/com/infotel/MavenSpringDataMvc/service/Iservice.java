@@ -46,7 +46,7 @@ public interface Iservice {
 	 * Liste des méthodes utilisées pour lier un element de la classe Cargaison avec un elements de la classe Societe
 	 */
 	
-	public void lierRoutiereSociete(Routiere routiere, int idSociete);
-	public void lierAerienneSociete(Aerienne aerienne, int idSociete);
+	public void lierRoutiereSociete(int idSociete, int idCargaison);
+	public void lierAerienneSociete(int idSociete, int idCargaison);
 	
 }
